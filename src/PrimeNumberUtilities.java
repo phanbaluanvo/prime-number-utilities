@@ -16,6 +16,16 @@ public class PrimeNumberUtilities {
         return true;
     }
 
+    public static List<Integer> generatePrimes(int limit) {
+        List<Integer> primes = new ArrayList<>();
+        for (int i = 2; i <= limit; i++) {
+            if (isPrime(i)) {
+                primes.add(i);
+            }
+        }
+        return primes;
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -24,7 +34,8 @@ public class PrimeNumberUtilities {
         while (true) {
             System.out.println("\nChoose an option:");
             System.out.println("1. Check if a number is prime");
-            System.out.println("2. Exit");
+            System.out.println("2. Generate prime numbers up to a limit");
+            System.out.println("3. Exit");
             System.out.print("Enter your choice: ");
 
             int choice = scanner.nextInt();
@@ -39,7 +50,15 @@ public class PrimeNumberUtilities {
                         System.out.println(number + " is not a prime number.");
                     }
                     break;
+
                 case 2:
+                    System.out.print("Enter the upper limit: ");
+                    int limit = scanner.nextInt();
+                    List<Integer> primes = generatePrimes(limit);
+                    System.out.println("Prime numbers up to " + limit + ": " + primes);
+                    break;
+
+                case 3:
                     System.out.println("Exiting the program. Goodbye!");
                     scanner.close();
                     return;
