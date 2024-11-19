@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class PrimeNumberUtilities {
 
+    // Feature: isPrime method to check if number is a prime
     public static boolean isPrime(int number) {
         if (number <= 1) {
             return false;
@@ -16,6 +17,7 @@ public class PrimeNumberUtilities {
         return true;
     }
 
+    // Feature: generatePrimes to generate a list of prime numbers up to the given limit
     public static List<Integer> generatePrimes(int limit) {
         List<Integer> primes = new ArrayList<>();
         for (int i = 2; i <= limit; i++) {
